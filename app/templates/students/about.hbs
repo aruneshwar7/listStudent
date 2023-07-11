@@ -1,0 +1,39 @@
+
+
+<div class="float-right container">
+<h1>id:{{this.model.data.id}}</h1>
+<h1>fname:{{this.model.data.first_name}}</h1>
+<h1>lname:{{this.model.data.last_name}}</h1>
+
+<h1>email:{{this.model.data.email}}</h1>
+
+<button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">edit</button>
+<LinkTo class="btn btn-primary"  @route="students" >home</LinkTo>
+</div>
+
+
+
+
+<div class="offcanvas offcanvas-end" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+
+<div class="">
+<span>edit</span>
+<button type="button" class="btn-close float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+
+<form action=""> <label class="lable">id:</label>
+    <span>  {{this.model.data.id}}</span><br>
+<label class="form-label">fname:</label>
+   <Input  placeholder={{this.model.data.first_name}} class="form-control"  @value={{this.fname}}/> <br>
+<label class="form-label">lname:</label>
+   <Input  placeholder={{this.model.data.last_name}} class="form-control" @value={{this.lname}}/>
+<br>
+<label class="form-label">email:</label>
+   <Input  placeholder={{this.model.data.email}} class="form-control"  @value={{this.email}}/>
+<br>
+   <button class="btn btn-success" onclick={{action "save"}} data-bs-dismiss="offcanvas">save</button></form>
+</div>
+
+
+
+{{outlet}}
